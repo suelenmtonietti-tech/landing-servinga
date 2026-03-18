@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SERV.INGA | Paisagismo Integrado e Infraestrutura</title>
+  <meta name="description" content="Soluções integradas de paisagismo, urbanização e infraestrutura para construtoras, loteadoras e prefeituras. Solicite uma proposta com a SERV.INGA." />
+  <meta name="theme-color" content="#2f5d3a" />
+
+  <style>
+    :root {
+      --green-dark: #2f5d3a;
+      --green-medium: #4e7b57;
+      --green-soft: #dfe9dc;
+      --green-light: #edf5ea;
+      --beige: #f7f4ee;
+      --text: #243126;
+      --text-soft: #5d6d60;
+      --white: #ffffff;
+      --border: rgba(47, 93, 58, 0.12);
+      --shadow: 0 20px 50px rgba(31, 53, 38, 0.10);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--green-light) 0%, #f8fbf7 30%, var(--beige) 100%);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--green-dark);
+      letter-spacing: 0.4px;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--green-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--green-dark);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #264e30;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.7);
+      color: var(--green-dark);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #fff;
+    }
+
+    .hero {
+      padding: 72px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(47, 93, 58, 0.09);
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4.3rem);
+      line-height: 1.05;
+      color: var(--green-dark);
+      margin-bottom: 20px;
+      letter-spacing: -1.6px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--text-soft);
+      max-width: 700px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+
+    .mini-card strong {
+      display: block;
+      color: var(--green-dark);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .mini-card span {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-image {
+      min-height: 560px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(35, 50, 38, 0.18), rgba(35, 50, 38, 0.18)),
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -24px;
+      bottom: 28px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      width: min(320px, 90%);
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card h3 {
+      color: var(--green-dark);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .floating-card p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 74px 0;
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin-bottom: 18px;
+    }
+
+    .section-title .tag {
+      display: inline-block;
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      background: rgba(47, 93, 58, 0.09);
+      border-radius: 999px;
+      padding: 7px 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.1;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--text-soft);
+      font-size: 1.02rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.84);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(30, 50, 35, 0.05);
+    }
+
+    .card h3 {
+      color: var(--green-dark);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--text-soft);
+    }
+
+    .features {
+      background: linear-gradient(180deg, rgba(223,233,220,0.55), rgba(255,255,255,0));
+    }
+
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .service-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .service-icon {
+      min-width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: rgba(47, 93, 58, 0.1);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .service-item h4 {
+      color: var(--green-dark);
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .case-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 35px rgba(30, 50, 35, 0.06);
+    }
+
+    .case-img {
+      height: 230px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .case-content {
+      padding: 22px;
+    }
+
+    .case-content h3 {
+      color: var(--green-dark);
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .proof {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .proof-box {
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .proof-box ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .proof-box li::before {
+      content: "•";
+      color: var(--green-dark);
+      font-weight: 900;
+      display: inline-block;
+      width: 18px;
+    }
+
+    .cta {
+      padding: 82px 0;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--green-dark), #416c4b);
+      color: white;
+      border-radius: 30px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      color: rgba(255,255,255,0.86);
+      max-width: 650px;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .contact-card form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.96);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .contact-card textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-note {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .footer {
+      padding: 30px 0 60px;
+    }
+
+    .footer-box {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer h3 {
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+
+    .footer p, .footer a {
+      color: var(--text-soft);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: right;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 90;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: white;
+      font-size: 1.65rem;
+      box-shadow: 0 18px 30px rgba(37, 211, 102, 0.35);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .cta-box,
+      .proof {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .cases-grid,
+      .hero-points,
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      .floating-card {
+        position: static;
+        margin-top: 18px;
+        width: 100%;
+      }
+
+      .hero-image {
+        min-height: 360px;
+      }
+
+      .footer-box {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        text-align: left;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#inicio" class="brand">
+        <div class="brand-badge">S</div>
+        <span>SERV.INGA</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#cases">Portfólio</a>
+        <a href="#contato">Contato</a>
+        <a class="btn btn-primary" href="https://wa.me/5544998032192?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta%20da%20SERV.INGA.">Solicitar Proposta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Paisagismo Integrado + Infraestrutura</span>
+          <h1>Execução técnica, estética e integrada para obras urbanas e empreendimentos.</h1>
+          <p>
+            A SERV.INGA atua com rigor técnico e foco em qualidade na execução de projetos de paisagismo, arborização, jardinagem, urbanização e obras complementares, entregando soluções completas para construtoras, loteadoras e prefeituras.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5544998032192?text=Olá,%20quero%20falar%20com%20um%20especialista%20da%20SERV.INGA.">
+              Falar com um Especialista
+            </a>
+            <a class="btn btn-secondary" href="#servicos">Ver Serviços</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="mini-card">
+              <strong>Solução completa</strong>
+              <span>Paisagismo e infraestrutura em uma execução integrada.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Rigor técnico</strong>
+              <span>Mais segurança, previsibilidade e melhor comunicação na obra.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Foco B2B</strong>
+              <span>Atendimento para construtoras, loteadoras e setor público.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image"></div>
+          <div class="floating-card">
+            <h3>Diferencial competitivo</h3>
+            <p>
+              A SERV.INGA não entrega apenas o paisagismo. Integra áreas verdes, urbanização e obras civis complementares para gerar um resultado funcional, sustentável e visualmente qualificado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="diferenciais">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Diferenciais</span>
+          <h2>Por que a SERV.INGA se destaca na execução de projetos urbanos?</h2>
+          <p>
+            Nosso modelo de atuação reduz retrabalho, melhora a comunicação entre frentes da obra e garante um resultado final mais estético, funcional e sustentável.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Execução Integrada</h3>
+            <p>
+              Integração entre paisagismo, infraestrutura, calçamento, alvenaria leve e manutenção para uma entrega mais eficiente.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Qualidade e Sustentabilidade</h3>
+            <p>
+              Projetos executados com visão técnica e compromisso com a valorização ambiental e urbana do espaço.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Eficiência Operacional</h3>
+            <p>
+              Menos ruído entre fornecedores, mais controle de prazo e uma execução alinhada às necessidades do empreendimento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Serviços</span>
+          <h2>Soluções especializadas para construtoras, loteadoras e prefeituras</h2>
+          <p>
+            A SERV.INGA oferece serviços integrados para implantação, manutenção e valorização de áreas urbanas e empreendimentos.
+          </p>
+        </div>
+
+        <div class="service-list">
+          <div class="service-item">
+            <div class="service-icon">🌿</div>
+            <div>
+              <h4>Jardinagem e paisagismo</h4>
+              <p>Implantação e manutenção de jardins com qualidade estética e funcional.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">🌳</div>
+            <div>
+              <h4>Arborização urbana</h4>
+              <p>Projetos de arborização voltados à sustentabilidade e valorização do espaço urbano.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">🧱</div>
+            <div>
+              <h4>Calçamento e urbanização</h4>
+              <p>Integração com infraestrutura urbana para loteamentos, áreas públicas e empreendimentos.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">🏗️</div>
+            <div>
+              <h4>Obras civis complementares</h4>
+              <p>Alvenaria leve e estruturas integradas ao projeto paisagístico e urbanístico.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">✂️</div>
+            <div>
+              <h4>Roçada e limpeza técnica</h4>
+              <p>Manutenção contínua de áreas verdes, com foco em conservação e apresentação.</p>
+            </div>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">📐</div>
+            <div>
+              <h4>Implantação de áreas verdes</h4>
+              <p>Execução completa para loteamentos e empreendimentos que precisam acelerar valorização e entrega.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Portfólio e confiança</span>
+          <h2>Experiência em projetos sustentáveis e parcerias estratégicas</h2>
+          <p>
+            A atuação da SERV.INGA inclui projetos em municípios do Paraná e parceria com instituições relevantes, reforçando capacidade técnica e credibilidade de execução.
+          </p>
+        </div>
+
+        <div class="cases-grid">
+          <article class="case-card">
+            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="case-content">
+              <h3>Arborização em Guaíra-PR</h3>
+              <p>Projetos voltados à sustentabilidade e melhoria da paisagem urbana.</p>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="case-content">
+              <h3>Paisagismo urbano em Santo Antônio da Platina</h3>
+              <p>Integração entre estética, funcionalidade e contexto urbano.</p>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <div class="case-img" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="case-content">
+              <h3>Atuação com a Sanepar</h3>
+              <p>Implantação e manutenção de cortinas verdes institucionais com foco técnico e contínuo.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="proof">
+          <div class="proof-box">
+            <h3>Para quem é ideal</h3>
+            <ul>
+              <li>Construtoras que buscam um parceiro técnico para execução integrada.</li>
+              <li>Loteadoras que precisam valorizar o empreendimento com áreas verdes e infraestrutura.</li>
+              <li>Prefeituras e gestores públicos que demandam manutenção e qualificação de espaços urbanos.</li>
+            </ul>
+          </div>
+
+          <div class="proof-box">
+            <h3>O que você ganha com isso</h3>
+            <ul>
+              <li>Menos retrabalho entre paisagismo e obra civil.</li>
+              <li>Mais previsibilidade no cronograma de execução.</li>
+              <li>Melhor apresentação do empreendimento e valorização do espaço.</li>
+              <li>Um único parceiro com visão técnica, estética e operacional.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Solicite uma proposta técnica para seu empreendimento</h2>
+            <p>
+              Fale com a equipe da SERV.INGA para avaliar a melhor solução em paisagismo, urbanização e manutenção de áreas verdes para sua obra, loteamento ou projeto público.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <form action="mailto:comercialservinga@gmail.com" method="post" enctype="text/plain">
+              <input type="text" name="nome" placeholder="Seu nome" required />
+              <input type="text" name="empresa" placeholder="Empresa" />
+              <input type="email" name="email" placeholder="Seu e-mail" required />
+              <input type="tel" name="telefone" placeholder="Telefone / WhatsApp" />
+              <textarea name="mensagem" placeholder="Descreva brevemente o projeto ou necessidade"></textarea>
+              <button type="submit" class="btn btn-primary">Solicitar Contato</button>
+            </form>
+            <div class="contact-note">
+              Ou fale direto no WhatsApp: (44) 99803-2192
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-box">
+        <div>
+          <h3>SERV.INGA</h3>
+          <p>Referência em paisagismo integrado, urbanização e obras complementares.</p>
+          <p style="margin-top:10px;">
+            E-mail: comercialservinga@gmail.com<br>
+            Telefone: (44) 99803-2192 / (44) 99915-3801
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://servinga.net.br" target="_blank" rel="noopener noreferrer">servinga.net.br</a>
+          <a href="mailto:comercialservinga@gmail.com">comercialservinga@gmail.com</a>
+          <a href="https://wa.me/5544998032192?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta." target="_blank" rel="noopener noreferrer">WhatsApp Comercial</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5544998032192?text=Olá,%20vim%20pelo%20site%20e%20quero%20solicitar%20uma%20proposta." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    ✆
+  </a>
+
+</body>
+</html>
