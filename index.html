@@ -36,6 +36,7 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
@@ -61,7 +62,7 @@
     }
 
     .topbar-inner {
-      min-height: 80px;
+      min-height: 86px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -71,21 +72,27 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       color: var(--green-900);
       font-weight: 800;
       letter-spacing: .3px;
     }
 
-    .brand-mark {
-      width: 44px;
-      height: 44px;
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
       border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--green-900), var(--green-700));
-      color: white;
+      background: #fff;
+      border: 1px solid var(--border);
       box-shadow: var(--shadow-md);
+      padding: 6px;
+    }
+
+    .brand-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: .4px;
     }
 
     .nav {
@@ -304,7 +311,6 @@
     .case-card p,
     .step p,
     .note,
-    .testimonial p,
     .faq-item p,
     .contact-copy p,
     .footer p,
@@ -433,7 +439,7 @@
 
     .cases-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 22px;
       margin-top: 26px;
     }
@@ -450,6 +456,7 @@
       height: 220px;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
 
     .case-body {
@@ -460,22 +467,6 @@
       color: var(--green-900);
       font-size: 1.12rem;
       margin-bottom: 8px;
-    }
-
-    .testimonial {
-      margin-top: 28px;
-      background: rgba(255,255,255,.9);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-xl);
-      padding: 32px;
-      box-shadow: var(--shadow-md);
-    }
-
-    .testimonial strong {
-      display: block;
-      color: var(--green-900);
-      font-size: 1.05rem;
-      margin-bottom: 10px;
     }
 
     .process-grid {
@@ -605,6 +596,23 @@
 
     .footer h3 { color: var(--green-900); margin-bottom: 8px; }
 
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .footer-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 6px;
+    }
+
     .footer-links {
       display: flex;
       flex-direction: column;
@@ -630,6 +638,12 @@
     }
 
     .whatsapp-float:hover { transform: translateY(-2px); }
+
+    @media (max-width: 1180px) {
+      .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
     @media (max-width: 1024px) {
       .hero-grid,
@@ -674,8 +688,8 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="#inicio" class="brand" aria-label="SERV.INGA - início">
-        <div class="brand-mark">S</div>
-        <span>SERV.INGA</span>
+        <img src="logo.jfif" alt="Logo SERV.INGA" class="brand-logo" />
+        <span class="brand-text">SERV.INGA</span>
       </a>
 
       <nav class="nav" aria-label="Navegação principal">
@@ -898,41 +912,42 @@
           <span class="section-tag">Portfólio e confiança</span>
           <h2>Experiência comprovada em projetos urbanos e parcerias estratégicas</h2>
           <p>
-            O conteúdo abaixo foi reorganizado para refletir os cases e provas citados no formulário de briefing, reforçando autoridade e credibilidade da SERV.INGA.
+            Cases reais que reforçam a capacidade técnica da SERV.INGA em projetos de paisagismo, manutenção, arborização e conservação de espaços urbanos e institucionais.
           </p>
         </div>
 
         <div class="cases-grid">
           <article class="case-card">
-            <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="case-image" style="background-image:url('SANTO ANTONIO DA PLATINA.jpg');"></div>
             <div class="case-body">
               <h3>Santo Antônio da Platina - PR</h3>
-              <p>Projetos de arborização com foco em qualificação da paisagem urbana e sustentabilidade.</p>
+              <p>Execução de serviços com foco em qualificação da paisagem urbana, valorização do espaço e manutenção eficiente.</p>
             </div>
           </article>
 
           <article class="case-card">
-            <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="case-image" style="background-image:url('CORNELIO.JPG');"></div>
             <div class="case-body">
               <h3>Cornélio Procópio - PR</h3>
-              <p>Paisagismo urbano executado com integração entre estética, funcionalidade e manutenção futura.</p>
+              <p>Atuação em serviços paisagísticos e urbanos com integração entre estética, funcionalidade e preservação do ambiente.</p>
             </div>
           </article>
 
           <article class="case-card">
-            <div class="case-image" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80');"></div>
+            <div class="case-image" style="background-image:url('SANEPAR.JPG');"></div>
             <div class="case-body">
               <h3>Parceria com a Sanepar</h3>
-              <p>Implantação e manutenção de cortinas verdes institucionais com atuação contínua e técnica.</p>
+              <p>Execução de serviços de roçada e manutenção com responsabilidade técnica, segurança operacional e cuidado contínuo com a área atendida.</p>
             </div>
           </article>
-        </div>
 
-        <div class="testimonial">
-          <strong>Prova social destacada</strong>
-          <p>
-            A loteadora Colombari aparece como referência de depoimento no briefing. Nesta versão, o espaço de prova social foi mantido para você substituir pela fala exata do cliente assim que aprovada.
-          </p>
+          <article class="case-card">
+            <div class="case-image" style="background-image:url('JARDIM BOTANICO.jpg');"></div>
+            <div class="case-body">
+              <h3>Jardim Botânico de Curitiba - PR</h3>
+              <p>Responsabilidade técnica pelos serviços de roçada, com foco em conformidade, segurança operacional e preservação do valor paisagístico do espaço.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1056,8 +1071,14 @@
     <div class="container">
       <div class="footer-box">
         <div>
-          <h3>SERV.INGA</h3>
-          <p>Execução integrada em paisagismo, arborização, jardinagem, urbanização e obras complementares.</p>
+          <div class="footer-brand">
+            <img src="logo.jfif" alt="Logo SERV.INGA" class="footer-logo" />
+            <div>
+              <h3>SERV.INGA</h3>
+              <p>Execução integrada em paisagismo, arborização, jardinagem, urbanização e obras complementares.</p>
+            </div>
+          </div>
+
           <p style="margin-top:10px;">
             E-mail: comercialservinga@gmail.com<br />
             Telefones: (44) 99803-2192 / (44) 99915-3801<br />
@@ -1066,7 +1087,6 @@
         </div>
 
         <div class="footer-links">
-          
         </div>
       </div>
     </div>
